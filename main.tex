@@ -1,0 +1,215 @@
+%% start of file `template.tex'.
+%% Copyright 2006-2013 Xavier Danaux (xdanaux@gmail.com).
+%
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License version 1.3c,
+% available at http://www.latex-project.org/lppl/.
+
+
+\documentclass[11pt,a4paper,roman]{moderncv}        % possible options include font size ('10pt', '11pt' and '12pt'), paper size ('a4paper', 'letterpaper', 'a5paper', 'legalpaper', 'executivepaper' and 'landscape') and font family ('sans' and 'roman')
+
+% modern themes
+\moderncvstyle{banking}                            % style options are 'casual' (default), 'classic', 'oldstyle' and 'banking'
+\moderncvcolor{blue}                                % color options 'blue' (default), 'orange', 'green', 'red', 'purple', 'grey' and 'black'
+%\renewcommand{\familydefault}{\sfdefault}         % to set the default font; use '\sfdefault' for the default sans serif font, '\rmdefault' for the default roman one, or any tex font name
+\nopagenumbers{}                                  % uncomment to suppress automatic page numbering for CVs longer than one page
+
+% character encoding
+\usepackage[utf8]{inputenc}
+\usepackage{fontawesome}
+\usepackage{tabularx}
+\usepackage{ragged2e}
+% if you are not using xelatex ou lualatex, replace by the encoding you are using
+%\usepackage{CJKutf8}                              % if you need to use CJK to typeset your resume in Chinese, Japanese or Korean
+
+% adjust the page margins
+\usepackage[scale=0.8]{geometry}
+\usepackage{multicol}
+%\setlength{\hintscolumnwidth}{3cm}                % if you want to change the width of the column with the dates
+%\setlength{\makecvtitlenamewidth}{10cm}           % for the 'classic' style, if you want to force the width allocated to your name and avoid line breaks. be careful though, the length is normally calculated to avoid any overlap with your personal info; use this at your own typographical risks...
+
+\usepackage{import}
+
+% personal data
+\name{Vishesh}{Dembla}
+% \title{Curriculum Vitae}                               % optional, remove / comment the line if not wanted
+\address{Bengaluru, IN}{}{}% optional, remove / comment the line if not wanted; the "postcode city" and and "country" arguments can be omitted or provided empty
+% \phone[mobile]{909-839-3097}                   % optional, remove / comment the line if not wanted
+% \phone[fixed]{01234 123456}                    % optional, remove / comment the line if not wanted
+%\phone[fax]{+3~(456)~789~012}                      % optional, remove / comment the line if not wanted
+% \email{xpan1@swarthmore.edu}                               % optional, remove / comment the line if not wanted
+% \homepage{shawnpan.me}                         % optional, remove / comment the line if not wanted
+% \extrainfo{}                 % optional, remove / comment the line if not wanted
+%\photo[64pt][0.4pt]{picture}                       % optional, remove / comment the line if not wanted; '64pt' is the height the picture must be resized to, 0.4pt is the thickness of the frame around it (put it to 0pt for no frame) and 'picture' is the name of the picture file
+%\quote{Some quote}                                 % optional, remove / comment the line if not wanted
+
+% to show numerical labels in the bibliography (default is to show no labels); only useful if you make citations in your resume
+%\makeatletter
+%\renewcommand*{\bibliographyitemlabel}{\@biblabel{\arabic{enumiv}}}
+%\makeatother
+%\renewcommand*{\bibliographyitemlabel}{[\arabic{enumiv}]}% CONSIDER REPLACING THE ABOVE BY THIS
+
+% bibliography with mutiple entries
+%\usepackage{multibib}
+%\newcites{book,misc}{{Books},{Others}}
+  
+\newcommand*{\customcventry}[7][.25em]{
+  \begin{tabular}{@{}l} 
+    {\bfseries #4}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\bfseries #5}
+  \end{tabular} \\
+  \begin{tabular}{@{}l} 
+    {\itshape #3}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #2}
+  \end{tabular}
+  \ifx&#7&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#7%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\newcommand*{\customcvproject}[4][.25em]{
+%   \vfill\noindent
+  \begin{tabular}{@{}l} 
+    {\bfseries #2}
+  \end{tabular}
+  \hfill% move it to the right
+  \begin{tabular}{l@{}}
+     {\itshape #3}
+  \end{tabular}
+  \ifx&#4&%
+  \else{\\%
+    \begin{minipage}{\maincolumnwidth}%
+      \small#4%
+    \end{minipage}}\fi%
+  \par\addvspace{#1}}
+
+\setlength{\tabcolsep}{12pt}
+
+%----------------------------------------------------------------------------------
+%            content
+%----------------------------------------------------------------------------------
+\begin{document}
+%\begin{CJK*}{UTF8}{gbsn}                          % to typeset your resume in Chinese using CJK
+%-----       resume       ---------------------------------------------------------
+\makecvtitle
+\vspace*{-23mm}
+
+\begin{center}
+\begin{tabular}{ c c c }
+\faGithub\enspace\href{https://github.com/visheshdembla}{visheshdembla} &
+\faEnvelopeO\enspace visheshdembla@hotmail.com & \faMobile\enspace +91 8408865738\\  
+\end{tabular}
+\end{center}
+
+
+\section{KEY SKILLS}
+\begin{multicols}{3}
+{\customcvproject{Programming Languages}{}
+  {\begin{itemize}
+    \item Java
+    \item Python
+    \item C
+    \item JavaScript
+  \end{itemize}
+  }
+}
+
+{\customcvproject{Development Tools}{}
+  {\begin{itemize}
+    \item Git
+    \item Docker
+    \item DialogFlow
+    \item CloudFoundry
+  \end{itemize}
+  }
+}
+
+{\customcvproject{Libraries/Frameworks}{}
+  {\begin{itemize}
+    \item Scikit-Learn
+    \item fastai
+    \item NLTK and Spacy
+    \item Django
+  \end{itemize}
+  }
+}
+\end{multicols}
+
+\section{EDUCATION}
+
+{\customcventry{May 2013 - July 2017}{Bachelor of Technology in Information Technology}{Savitribai Phule Pune University}{Pune, India}{}{\begin{itemize}
+    \item Grade – 68.33\%, First Class with Distinction. 
+    \item Relevant courses – Machine Learning, Algorithms, Operating System, System Programming, Data Structures
+  \end{itemize}
+  }}
+\section{HIGHLIGHTED PROJECTS}
+
+{\customcvproject{Machine Comprehension with Solution Search}{October 2018 - January 2019}
+  {\begin{itemize}
+    \item Integrated existing Solution Search infrastructure with BiDAF model for machine comprehension
+    \item It reduced inflow of consultation requests and need for customers to manually go through the documents
+  \end{itemize}
+  }
+}
+
+
+{\customcvproject{Scenario2Script}{February 2018 – April 2018}
+{\begin{itemize}
+  \item Developed a web-app that makes use of scenario documents and auto-generates test scripts for UI5.
+  \item Used dependency parsing and POS tagging to get a JSON representation which converts to test script.
+\end{itemize}
+}
+
+{\customcvproject{Resource Sharing Using Virtual Computation Grid Based on Li-Fi}{June 2016 – May 2017}
+{\begin{itemize}
+  \item A virtual computation grid aimed at achieving resource sharing using distributed computing based on Li-Fi
+  \item Implemented as the undergraduate final year thesis
+\end{itemize}
+}
+}
+
+
+\section{EXPERIENCE}
+
+{\customcventry{July 2017 - Present}{Developer Associate}{SAP Labs India}{Bengaluru, India}{}
+{\begin{itemize}
+  \item Working in technical reuse layer team of SAP Business ByDesign. Primarily responsible for embedded support, mass data run objects, formula derivation table, document flow and task management
+  \item Other responsibilities include Performance and Machine Learning Expert
+\end{itemize}
+}
+
+}
+
+\section{ACHIEVEMENTS AND CERTIFICATIONS}
+
+  {\begin{itemize}
+    \item SAP Business ByDesign “Da Vinci” Award – Innovation Project – Google Search Integration – 2018
+    \item SAP Honors Award – Machine Learning and Innovation Enabler – 2018
+    \item Deep Learning Specialization (upto Courses 4) - Coursera
+    \item TFWS – Financial Assistantship for College Tuition funded by Ministry of HRD India – 2013
+
+  \end{itemize}
+  }
+
+}
+
+\section{PUBLICATIONS}
+
+{\customcvproject{Implementation of Grid System over Li-Fi Network}{August 2018}
+  {\begin{itemize}
+    \item Presented at the ICCUBEA,2018
+    \item To be published on IEEE Xplore
+  \end{itemize}
+  }
+}
+
+\end{document}
+
